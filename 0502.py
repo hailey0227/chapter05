@@ -32,22 +32,68 @@ from mod1 import sum, safe_sum
 
 print("mod1 모듈의 sum 함수 사용 : {0}".format(sum(3, 4))) # mod1을 붙이면 오류가 난다.
 
+
 # 문제 1) 사칙연산을 위한 계산기 프로그램을 모듈을 활용한 방식으로 제작하세요
 # 모듈명 : Cal
 # 사칙연산 함수명 plus, minus, multi, divide
 # 각각 함수는 매개 변수를 2개씩 가지고 있음(first, second)
 
-import Cal
+print()
 
-print("Cal 모듈 plus 함수 사용 : {0}".format(Cal.plus(4, 2)))
-print("Cal 모듈 minus 함수 사용 : {0}".format(Cal.minus(4, 2)))
-print("Cal 모듈 multi 함수 사용 : {0}".format(Cal.multi(4, 2)))
-print("Cal 모듈 divide 함수 사용 : {0}".format(Cal.divide(4, 2)))
+# import Cal
 
+# print("Cal 모듈 plus 함수 사용 : {0}".format(Cal.plus(4, 2)))
+# print("Cal 모듈 minus 함수 사용 : {0}".format(Cal.minus(4, 2)))
+# print("Cal 모듈 multi 함수 사용 : {0}".format(Cal.multi(4, 2)))
+# print("Cal 모듈 divide 함수 사용 : {0}".format(Cal.divide(4, 2)))
 
+from Cal import plus, minus, multi, divide
 
+print("Cal 모듈 plus 함수 사용 : {0}".format(plus(4, 2)))
+print("Cal 모듈 minus 함수 사용 : {0}".format(minus(4, 2)))
+print("Cal 모듈 multi 함수 사용 : {0}".format(multi(4, 2)))
+print("Cal 모듈 divide 함수 사용 : {0}".format(divide(4, 2)))
 
-from Cal2 import plus, minus, multi, divide
+# 클래스나 변수 등을 포함한 모듈
+# 일반 함수가 들어있는 모듈과 동일함
+
+# 사용방법
+    # 클래스
+    # 변수명 = 모듈명.클래스명()
+
+    # 변수
+    # 변수명 = 모듈명.변수명
+
+print()
+
+import mod2
+
+result = mod2.sum(3, 4)
+print("mod2 모듈을 로드하여 sum 함수 사용: {0}".format(result))
+
+# 문제 2) 문제 1의 소스를 수정하여 클래스를 사용한 방식의 사칙연산 프로그램을 제작하세요
+# 모듈명 : Cal2
+# 클래스명 : Calculator
+# 함수명 : plus, minus, multi, divide
+# 각 함수는 2개의 매개변수를 가짐(first, second)
+
+print()
+print("==== Cal2 모듈 ====")
+import Cal2
+
+# print("Cal2 모듈 plus 함수 사용 : {0}".format(plus(100, 20)))
+# print("Cal2 모듈 minus 함수 사용 : {0}".format(minus(100, 20)))
+# print("Cal2 모듈 multi 함수 사용 : {0}".format(multi(100, 20)))
+# print("Cal2 모듈 divide 함수 사용 : {0}".format(divide(100, 20)))
+
+a = Cal2.Calculator()
+a.setCal(100, 20)
+print("Cal2 모듈 plus 함수 사용 : {0}".format(a.plus()))
+print("Cal2 모듈 minus 함수 사용 : {0}".format(a.minus()))
+print("Cal2 모듈 multi 함수 사용 : {0}".format(a.multi()))
+print("Cal2 모듈 divide 함수 사용 : {0}".format(a.divide()))
+
+# from Cal2 import plus, minus, multi, divide
 
 # a.Cal2(4, 2)
 # print(a.plus())
@@ -55,7 +101,33 @@ from Cal2 import plus, minus, multi, divide
 # print(a.multi())
 # print(a.divide())
 
-print("Cal2 모듈 plus 함수 사용 : {0}".format(plus(4, 2)))
-print("Cal2 모듈 minus 함수 사용 : {0}".format(minus(4, 2)))
-print("Cal2 모듈 multi 함수 사용 : {0}".format(multi(4, 2)))
-print("Cal2 모듈 divide 함수 사용 : {0}".format(divide(4, 2)))
+# print("Cal2 모듈 plus 함수 사용 : {0}".format(plus(4, 2)))
+# print("Cal2 모듈 minus 함수 사용 : {0}".format(Cal2.minus(4, 2)))
+# print("Cal2 모듈 multi 함수 사용 : {0}".format(Cal2.multi(4, 2)))
+# print("Cal2 모듈 divide 함수 사용 : {0}".format(Cal2.divide(4, 2)))
+
+# 문제 3) 위의 문제 2번에서 오버로딩을 사용하여 값이 매개 변수에 따라 다른 형태로 출력하는 클래스를 만들고 이를 사용하는 프로그램을 제작하세요
+# 모듈명 : Cal3
+# 기본 초기화 메서드 :setNumber
+    # 매개변수가 총 3개
+    # 멤버 변수 first, second의 값을 초기화 함
+# 메서드 이름 : plus, minus, multi, divide
+    # 기존 그대로 만들고
+    # 멤버 변수를 활용하여 값을 연산
+# 메서드의 매개변수의 수에 따라 연산을 달리함 (*args)
+    # 추가된 메서드 totalCal
+    # 1번째 매개변수 : self
+    # 2번째 매개변수 args의 index 0번 : +, -, *, / (문자열로 받기)
+    # 매개변수 args의 index 1번 부터 숫자를 입력 받음
+    # 입력받을 매개변수 수 총 5개 까지
+
+
+
+    # import Cal3
+
+    # A = Cal3.Calc()
+    # A.setNumber
+    
+
+
+   

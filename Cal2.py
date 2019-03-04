@@ -1,18 +1,20 @@
 #-*-coding:utf8
-
-class Cal2:
-    def setdata(self, a, b):
-        self.a = a
-        self.b = b
+class Calculator:
+    def setCal(self, first, second):
+        self.first = first
+        self.second = second
 
     def plus(self):
-        return self.a + self.b
+        return self.first + self.second
 
     def minus(self):
-        return self.a - self.b
+        return self.first - self.second
 
     def multi(self):
-        return self.a * self.b
+        return self.first * self.second
 
     def divide(self):
-        return self.a / self.b
+        return self.first / self.second
+
+
+        
